@@ -7,8 +7,8 @@
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   --blue-900: #0c3d87;
-  --blue-700: #0a63dc;
-  --blue-600: #1476ff;
+  --blue-700: #0756bd;
+  --blue-600: #0a63dc;
   --blue-500: #358dff;
   --blue-100: #dcecff;
   --blue-050: #f3f8ff;
@@ -17,7 +17,7 @@
   --red-600: #e34b58;
   --red-100: #ffe6e9;
   --ink: #13233a;
-  --muted: #6b7c93;
+  --muted: #596b82;
   --line: #dfeafa;
   --white: #ffffff;
   --shadow: 0 18px 50px rgba(29, 100, 190, 0.11);

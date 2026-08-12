@@ -72,6 +72,8 @@ npx supabase db push
 - 포인트 적립과 상품 구매는 인증 사용자 전용 Database Function에서 원자적으로 처리
 - 포인트 잔액과 구매기록은 브라우저에서 직접 변경 불가
 - 미션 보상과 구매 요청은 중복 처리 방지
+- 원자적 미션·구매 함수는 `auth.uid()`를 검사하고 anon 실행을 차단하며 빈 `search_path`로 고정
+- Supabase Free 플랜에서는 Pro 전용 유출 비밀번호 보호를 사용할 수 없으므로 8자 이상 비밀번호와 이메일 인증을 적용
 
 ## Render 배포 준비
 

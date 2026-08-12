@@ -640,7 +640,7 @@ app.innerHTML = `
             </div>
           </div>
 
-          <div class="aircon-readings" aria-label="가상 에어컨 현재 상태">
+          <div class="aircon-readings" role="group" aria-label="가상 에어컨 현재 상태">
             <div><small>POWER</small><strong id="aircon-power-value">ON</strong></div>
             <div><small>MODE</small><strong id="aircon-mode-value">냉방</strong></div>
             <div><small>온도</small><strong id="aircon-temperature-value">26°C</strong></div>
