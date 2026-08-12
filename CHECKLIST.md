@@ -138,4 +138,4 @@
 - [x] Warning/Error Red 확인
 - [x] Supabase 보안 확인
 - [x] 전체 기능 회귀 테스트
-- [ ] 최종 배포 확인
+- [x] 최종 배포 확인
