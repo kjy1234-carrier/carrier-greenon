@@ -231,13 +231,30 @@ async function ensureProfile(user) {
     (typeof metadataName === 'string' && metadataName.trim()) ||
     user?.email?.split('@')[0] ||
     'GreenON 사용자';
-  const { data, error } = await supabase
+
+  const existing = await supabase
     .from('profiles')
-    .upsert({ id: user.id, display_name: displayName.slice(0, 30) }, { onConflict: 'id' })
     .select('id, display_name, current_points, green_level_id, created_at, updated_at')
+    .eq('id', user.id)
+    .maybeSingle();
+  if (existing.error) throw existing.error;
+  if (existing.data) return existing.data;
+
+  const inserted = await supabase
+    .from('profiles')
+    .insert({ id: user.id, display_name: displayName.slice(0, 30) })
+    .select('id, display_name, current_points, green_level_id, created_at, updated_at')
+    .maybeSingle();
+  if (inserted.error && inserted.error.code !== '23505') throw inserted.error;
+  if (inserted.data) return inserted.data;
+
+  const retried = await supabase
+    .from('profiles')
+    .select('id, display_name, current_points, green_level_id, created_at, updated_at')
+    .eq('id', user.id)
     .single();
-  if (error) throw error;
-  return data;
+  if (retried.error) throw retried.error;
+  return retried.data;
 }
 
 async function ensureAircon(userId) {
