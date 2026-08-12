@@ -86,7 +86,7 @@ Blueprint 생성 중 아래 환경변수 값은 Render 대시보드에서 직접
 - `VITE_SUPABASE_URL`
 - `VITE_SUPABASE_PUBLISHABLE_KEY`
 
-배포 URL이 정해지면 Supabase Dashboard의 Authentication URL Configuration에 해당 URL과 필요한 Redirect URL을 등록해야 합니다.
+현재 Render 배포 URL은 `https://carrier-greenon-fmii.onrender.com`입니다. Supabase Dashboard의 Authentication URL Configuration에서 이 주소를 Site URL과 Redirect URL로 등록해야 이메일 인증 후 배포본으로 돌아옵니다.
 
 ## 날씨 동작
 

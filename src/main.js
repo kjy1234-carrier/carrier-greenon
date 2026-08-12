@@ -1800,7 +1800,10 @@ async function handleAuthSubmit(event) {
       const { data, error } = await supabase.auth.signUp({
         email,
         password,
-        options: { data: { display_name: name } },
+        options: {
+          data: { display_name: name },
+          emailRedirectTo: `${globalThis.location.origin}/`,
+        },
       });
       if (error) throw error;
 
